@@ -21,11 +21,20 @@
 # SOFTWARE.
 
 from setuptools import setup, find_packages
-from mapregions import __name__, __version__, __author__, __author_email__
+
+
+package_name = "mapregions"
+
+__version__ = None
+filepath = os.path.dirname(__file__)
+version_file = os.path.join(filepath, package_name, "__init__.py")
+with open(version_file, mode="r") as file:
+    for line in file.readlines()[:4]:
+        exec(line)
 
 
 setup(
-    name=__name__,
+    name=package_name,
     version=str(__version__),
     license="MIT",
     author=__author__,
