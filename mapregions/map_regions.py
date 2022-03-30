@@ -370,7 +370,7 @@ class MapRegions:
         **kwargs,
     ):
         # Register "map_region_plot" projection with Matplotlib
-        import orix.plot.map_region_plot
+        import mapregions._plot
 
         fig = plt.figure(**figure_kwargs)
         ax = fig.add_subplot(projection="map_region_plot")
